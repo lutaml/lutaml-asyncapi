@@ -30,7 +30,10 @@ Gem::Specification.new do |spec|
   end
   spec.require_paths = ["lib"]
 
+  # lutaml-model requires an XML adapter at require time; without
+  # lutaml-jsonschema (unlike lutaml-openapi) nothing else pulls one in
   spec.add_dependency "json"
   spec.add_dependency "lutaml-model", "~> 0.8.122"
+  spec.add_dependency "nokogiri"
   spec.add_dependency "yeptris", "~> 0.6.34"
 end
