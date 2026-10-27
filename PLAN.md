@@ -73,8 +73,9 @@ Lutaml::Asyncapi::Document            (lossless: mapped roots + map_unmapped)
   error paths).
 - **M3 — metanorma-plugin-asyncapi**: renderer + preprocessor; OGC
   connected-systems part 2 and EDR pubsub as the acceptance corpus.
-- **M4 — SPA frontend**: single-file human documentation (lutaml-xsd /
-  lutaml-jsonschema precedent).
+- **M4 — SPA frontend: DONE (2026-10-27, feat/spa)** — single-file human
+  documentation (Vue 3 IIFE + Spa.generate); dist is gitignored and enters
+  the gem only immediately before a release.
 
 ## Standing laws
 

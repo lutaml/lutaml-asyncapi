@@ -9,6 +9,7 @@ module Lutaml
   module Asyncapi
     autoload :Document, "lutaml/asyncapi/document"
     autoload :Typed, "lutaml/asyncapi/typed"
+    autoload :Spa, "lutaml/asyncapi/spa"
 
     # Parses an AsyncAPI document (YAML or JSON) into a Document.
     def self.parse(string)
