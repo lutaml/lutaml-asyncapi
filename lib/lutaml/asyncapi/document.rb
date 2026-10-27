@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "lutaml/asyncapi/typed"
+
 module Lutaml
   module Asyncapi
     # The root AsyncAPI document object, in the 3.x shape.
@@ -9,6 +11,8 @@ module Lutaml
     # Round-trip assertions go through to_json — Serializable#to_hash emits
     # attribute names, not mapped wire names.
     class Document < Lutaml::Model::Serializable
+      include Typed
+
       attribute :asyncapi, :string
       attribute :id, :string
       attribute :info, :hash
