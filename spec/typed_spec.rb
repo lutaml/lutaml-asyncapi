@@ -2,8 +2,6 @@
 
 require "spec_helper"
 
-FIXTURES = File.expand_path("fixtures", __dir__).freeze
-
 RSpec.describe Lutaml::Asyncapi::Typed do
   def doc(name)
     Lutaml::Asyncapi.parse(File.read(File.join(FIXTURES, name)))

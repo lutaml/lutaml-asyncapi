@@ -4,8 +4,6 @@ require "spec_helper"
 require "yeptris/yaml"
 require "json"
 
-FIXTURES = File.expand_path("fixtures", __dir__).freeze
-
 # gitter-streaming + slack-rtm are vendored but excluded: nested
 # ":hash" nodes with a "text" key are corrupted by
 # lutaml/lutaml-model#1013 until that ships
