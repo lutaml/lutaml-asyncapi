@@ -8,6 +8,7 @@ module Lutaml
   # AsyncAPI 2.6/3.0/3.1 as a lossless lutaml-model.
   module Asyncapi
     autoload :Document, "lutaml/asyncapi/document"
+    autoload :Typed, "lutaml/asyncapi/typed"
 
     # Parses an AsyncAPI document (YAML or JSON) into a Document.
     def self.parse(string)
