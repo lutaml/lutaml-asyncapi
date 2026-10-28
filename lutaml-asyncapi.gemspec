@@ -33,7 +33,8 @@ Gem::Specification.new do |spec|
   # lutaml-model requires an XML adapter at require time; without
   # lutaml-jsonschema (unlike lutaml-openapi) nothing else pulls one in
   spec.add_dependency "json"
-  spec.add_dependency "lutaml-model", "~> 0.8.122"
+  # 0.8.132 fixed the nested-hash "text"-key corruption (model#1013)
+  spec.add_dependency "lutaml-model", "~> 0.8.132"
   spec.add_dependency "nokogiri"
   spec.add_dependency "yeptris", "~> 0.6.34"
 end

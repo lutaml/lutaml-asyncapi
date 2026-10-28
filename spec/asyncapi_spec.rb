@@ -4,12 +4,7 @@ require "spec_helper"
 require "yeptris/yaml"
 require "json"
 
-# gitter-streaming + slack-rtm are vendored but excluded: nested
-# ":hash" nodes with a "text" key are corrupted by
-# lutaml/lutaml-model#1013 until that ships
-BLOCKED_BY_MODEL_1013 = %w[gitter-streaming-asyncapi.yml
-                           slack-rtm-asyncapi.yml].freeze
-GOLDENS = (Dir.children(FIXTURES).sort - BLOCKED_BY_MODEL_1013).freeze
+GOLDENS = Dir.children(FIXTURES).sort.freeze
 
 RSpec.describe Lutaml::Asyncapi do
   it "parses every corpus document" do

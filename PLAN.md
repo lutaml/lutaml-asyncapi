@@ -19,12 +19,9 @@ Full spec read: `asyncapi/spec` `spec/asyncapi.md` (v3.1.0, 39 objects),
 meta-schemas `asyncapi/spec-json-schemas` (definitions 1.0.0–3.1.0).
 Corpus: 17 documents in `spec/fixtures` — 15 official 3.1.0 examples,
 `asyncapi-connectedsystems-2.yaml` (2.6.0, 9 embedded publish/subscribe
-operations), `edr-pubsub-asyncapi.yaml` (3.0.0). **All parse; 15/17 round-trip
-losslessly** — `gitter-streaming` and `slack-rtm` are blocked upstream by
-[lutaml/lutaml-model#1013](https://github.com/lutaml/lutaml-model/issues/1013)
-(nested `:hash` attributes silently rename key `text` → `type` and drop
-sibling `description`); they are vendored but excluded from goldens until
-that ships.
+operations), `edr-pubsub-asyncapi.yaml` (3.0.0). **All 17 round-trip
+losslessly** (the gitter/slack exclusion was lifted when lutaml-model
+0.8.132 fixed model#1013).
 
 Corpus facts shaping the model: no `schemaFormat` (Multi Format Schema)
 usage in the wild corpus; bindings sparse (kafka/mqtt/websocket); components
