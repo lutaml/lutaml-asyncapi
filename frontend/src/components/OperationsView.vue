@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { inject, computed } from 'vue'
+import { t } from '../i18n'
 
 const asyncapi = inject<Record<string, any>>('asyncapi') || {}
 const props = defineProps<{ filter: string }>()
@@ -19,13 +20,13 @@ const entries = computed(() => {
 </script>
 
 <template>
-  <section aria-label="Operations">
-    <h2>Operations</h2>
+  <section :aria-label="t('operations.heading')">
+    <h2>{{ t('operations.heading') }}</h2>
     <div v-for="op in entries" :key="op.id" class="op">
       <h3><span class="method" :class="op.action">{{ op.action }}</span> {{ op.id }}</h3>
       <p v-if="op.summary">{{ op.summary }}</p>
       <p v-if="op.description">{{ op.description }}</p>
     </div>
-    <p v-if="!entries.length">No operations match the filter.</p>
+    <p v-if="!entries.length">{{ t('operations.noMatch') }}</p>
   </section>
 </template>
