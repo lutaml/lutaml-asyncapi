@@ -16,12 +16,10 @@ doc.to_json     # lossless re-serialization
 ## Losslessness
 
 The raw mapping is preserved verbatim: every section is kept as parsed,
-unmodeled keywords re-emit on serialization (`map_unmapped`), and
-round-trips are asserted against the OGC and AsyncAPI corpus in
-`spec/fixtures`. Two vendored corpus documents (gitter-streaming,
-slack-rtm) are excluded pending
-[lutaml-model#1013](https://github.com/lutaml/lutaml-model/issues/1013) —
-fixed on lutaml-model main; they rejoin the goldens at the next
-lutaml-model release.
+unmodeled keywords re-emit on serialization (`map_unmapped`), and the wire
+round trip (`parse → to_json`) is asserted losslessly for the **entire
+17-document corpus** vendored in `spec/fixtures` — the official 3.1 examples,
+connected-systems 2.6, and the EDR pubsub 3.0 document. Wire round trips go
+through `to_json`; `to_hash` emits Ruby attribute names, not wire names.
 
 See [PLAN.md](PLAN.md) for the program plan.
