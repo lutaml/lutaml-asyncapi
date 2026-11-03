@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   # lutaml-jsonschema (unlike lutaml-openapi) nothing else pulls one in
   spec.add_dependency "json"
   # 0.8.132 fixed the nested-hash "text"-key corruption (model#1013)
-  spec.add_dependency "lutaml-model", "~> 0.8.156"
+  spec.add_dependency "lutaml-model", "~> 0.8.159"
   spec.add_dependency "nokogiri"
   spec.add_dependency "yeptris", "~> 0.6.51"
 end
